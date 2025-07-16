@@ -1,0 +1,155 @@
+---
+title: Getting Started
+---
+# Getting Started with CiSwap
+
+Welcome to **CiSwap** — the first virtual AMM on Aptos that uses **synthetic liquidity** to simulate deep liquidity pools with zero initial TVL. Whether you're a DeFi power user or a curious beginner, this guide will walk you through everything you need to know to get started.
+
+---
+
+## 🧩 What is CiSwap?
+
+CiSwap is a next-generation decentralized exchange (DEX) built on Aptos. It uses a unique mechanism called **virtual liquidity**, powered by internal **ciTokens**, to let users trade, provide liquidity, earn fees, and participate in DeFi—all without needing massive reserves of real assets.
+
+### CiSwap offers:
+- 🔁 **Swapping** between real and synthetic tokens
+- 💧 **Adding liquidity** to earn fees
+- 🏦 **Staking** synthetic tokens for rewards
+- 📈 **Redeeming** synthetic tokens at a premium (e.g., 1.25x)
+- 💸 **Lending/Borrowing** ciTokens
+- 💰 **Claiming trading fees** from the protocol
+
+---
+
+## 🛠️ What You’ll Need
+
+To start using CiSwap, make sure you have the following:
+
+1. ✅ An **Aptos-compatible wallet** (e.g., Petra, Martian, Pontem)
+2. ✅ Some testnet **APT** or supported tokens (faucets available)
+3. ✅ Access to the **CiSwap Testnet UI** → [https://ciswap.starci.net](https://ciswap.starci.net)
+
+> 💡 You can experiment safely on Testnet before the mainnet launch.
+
+---
+
+## ⚙️ How It Works (In Simple Terms)
+
+Unlike traditional AMMs that require deep real liquidity, CiSwap simulates depth using synthetic tokens (`ciTokens`). These are minted internally by the protocol and reflect virtual balances.
+
+### Virtual AMM Formula:
+```math
+(X + ciX)(Y + ciY) = K
+```
+Where:
+- `X`, `Y` = real token reserves
+- `ciX`, `ciY` = synthetic token reserves
+- `K` = constant product
+
+This hybrid model lets trades happen even if there's little to no real liquidity in the pool.
+
+---
+
+## 🔁 How to Swap Tokens
+
+Swapping on CiSwap is simple and flexible. Here's how it works:
+
+1. **Go to the Swap tab** on the interface.
+2. **Select token pair** (e.g., APT → ciUSDC).
+3. **Enter the amount** you want to trade.
+4. **Confirm slippage tolerance** (recommended: 0.5% to 1%).
+5. **Click Swap** and approve the transaction.
+
+### What you receive:
+- ✅ A portion in **real token** (e.g., USDC)
+- ✅ A portion in **ciToken** (e.g., ciUSDC)
+
+These ciTokens can later be staked, redeemed, or used within the CiSwap ecosystem.
+
+---
+
+## 💧 How to Add Liquidity
+
+Liquidity providers (LPs) are essential to the CiSwap ecosystem. When you provide liquidity, you deposit tokens into a pool and earn fees from swaps.
+
+### To add liquidity:
+1. Go to the **Liquidity tab**
+2. Choose a pool (e.g., APT/ciUSDC)
+3. Enter how much of each token to provide
+4. Confirm and approve the transaction
+
+### What you get:
+- 📄 LP tokens that track your share of the pool
+- 💰 A share of the **0.3% trading fee** on each swap
+- 📈 Exposure to price and virtual liquidity growth
+
+---
+
+## 💰 Understanding Fees
+
+CiSwap uses a simple but fair fee structure:
+- **0.3% LP fee** on all swaps
+- **10% protocol fee** taken from the LP fee (not the total swap)
+  - This means 0.03% goes to the protocol
+  - The remaining 0.27% goes to LPs
+
+These fees are split between real and synthetic tokens and can be **claimed anytime**.
+
+---
+
+## 🎁 How to Earn with ciTokens
+
+When you receive ciTokens from swaps, you're not stuck with them — in fact, they’re designed to earn more.
+
+| Action              | Benefit                                |
+|---------------------|-----------------------------------------|
+| 🔁 Swap tokens       | Receive ciTokens                        |
+| 📊 Stake ciTokens    | Earn protocol rewards                   |
+| 💵 Redeem ciTokens   | Get up to 1.25x of face value           |
+| 🏦 Lend/Borrow       | Use ciTokens for DeFi activities        |
+
+> Think of ciTokens as yield-bearing receipts you can use across the ecosystem.
+
+---
+
+## 🔐 Slippage & Safety
+
+To protect users, every swap on CiSwap includes **slippage tolerance**:
+- You always define a minimum amount you expect.
+- If the output falls below that, the transaction fails.
+
+Also:
+- ✅ All smart contracts are **on-chain & transparent**
+- 🔒 Audits are underway (testnet phase)
+- 🛡️ Fee logic ensures protocol sustainability
+
+---
+
+## 🧪 Try CiSwap on Testnet
+
+👉 Test it live: [https://ciswap.starci.net](https://ciswap.starci.net)
+
+Use your wallet to connect and explore:
+- Swap APT ↔ ciUSDC
+- Add liquidity to any pool
+- View your synthetic balances and LP fees
+
+> 📢 Testnet is an open playground — experiment freely before mainnet.
+
+---
+
+## 📌 Final Notes
+
+- ciTokens are internal synthetic assets, not bridged or backed by real-world collateral.
+- They can be redeemed for extra value, depending on protocol rules.
+- The long-term vision of CiSwap is to enable **capital-efficient trading** with **zero initial TVL**.
+
+---
+
+## 🧠 Learn More & Join the Community
+
+- 🧑‍💻 Read our full [Docs](/docs)
+- 🧵 Follow [@CiUniverse](https://twitter.com/CiUniverse)
+- 🧑‍🤝‍🧑 Join [Discord](https://discord.gg/starci)
+
+> Built for builders. Designed for traders. Powered by synthetic liquidity.

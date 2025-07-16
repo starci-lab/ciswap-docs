@@ -1,0 +1,64 @@
+    # 🔁 Swap (Deep Dive for Users)
+
+Swapping on CiSwap is not just a standard token-for-token trade. It's powered by virtual liquidity, so the result of your swap is **split** between real and synthetic assets.
+
+## 🎯 What Happens During a Swap?
+When you initiate a swap, you're trading a real token (e.g., APT) for a mix of real and synthetic tokens (ciTokens). The smart contract calculates the output using a hybrid constant product formula:
+
+```math
+(X + ciX)(Y + ciY) = K
+```
+
+This formula ensures that liquidity is simulated, allowing trades to execute even if the real reserves are low. You receive a combination of:
+
+- ✅ **Real tokens** (if available in reserves)
+- ✅ **ciTokens** (synthetic assets minted by the protocol)
+
+> Example: Swap 100 APT → 25 USDC (real) + 75 ciUSDC (synthetic)
+
+## 📊 How It Works Internally
+When the `swap()` function is called in Move:
+
+1. **Validation**:
+   - Checks that `amount_in > 0`
+   - Ensures sufficient balance for input token
+
+2. **AMM Calculation**:
+   - Computes output amounts (`amount_out`, `amount_debt_out`) using both real and synthetic reserves
+   - Calculates swap fees (split between LP and protocol)
+
+3. **Slippage Protection**:
+   - Validates that outputs are greater than user-defined minimums
+
+4. **Token Transfers**:
+   - Transfers real input tokens to the pool
+   - Transfers real output tokens to the recipient
+   - Transfers synthetic output tokens to the recipient
+   - Applies fee extraction logic
+
+5. **Fee Distribution**:
+   - 90% of fees to LP fee stores
+   - 10% of fees to protocol fee stores
+   - Fee accounting separated for real and synthetic tokens
+
+6. **Reserve Update**:
+   - Adjusts reserves for both real and synthetic tokens based on trade
+
+7. **Emit Event**:
+   - Emits a `SwapEvent` with metadata: sender, amount, direction, recipient, output amounts
+
+## 🧠 What Makes It Unique
+- ✨ Dual output: Get both real and synthetic tokens
+- 🛡️ Safety: Slippage limits prevent loss
+- 🔄 Composable: ciTokens can be staked, lent, or redeemed
+
+## ⚠️ Notes
+- If real liquidity is low, most of your output may be synthetic
+- Real token output is capped by pool reserve
+- ciTokens are fully trackable and claimable in future
+
+## 📌 Summary Table
+| Input               | Output                  | Benefit                         |
+|--------------------|--------------------------|----------------------------------|
+| Real token (APT)   | Real token + ciToken     | Instant execution, low slippage |
+| Real token (USDC)  | Real token + ciAPT       | Access to deep synthetic market |
