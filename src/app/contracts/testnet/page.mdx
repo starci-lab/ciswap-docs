@@ -1,6 +1,6 @@
 # 📦 CiSwap Smart Contracts
 
-The following contracts are deployed on the **Aptos Testnet**. These modules power the core logic behind **CiSwap’s Virtual AMM** and **ciToken Factory**.
+The following contracts are deployed on the **Aptos Testnet**. These modules power the core logic behind **CiSwap’s Virtual AMM** and **FA Factory**.
 
 ---
 
@@ -23,11 +23,9 @@ The **Swap Module** is the heart of CiSwap’s virtual liquidity system. It hand
 
 ## 🏗️ FA Factory Module
 
-The **FA (Fungible Asset) Factory Module** handles minting of internal debt tokens (`ciTokenX`, `ciTokenY`) that simulate liquidity. It is used to:
+The **FA (Fungible Asset) Factory Module** handles minting any FA. It is used to:
 
-- Deploy new ciTokens on demand  
-- Assign metadata and permissions  
-- Plug ciTokens into other protocols (staking, lending, synthetic assets, etc.)
+- Deploy new token on demand  
 
 ```ts
 0x52bd3d0e3da53c52cdd23cafd7709d6c9fe4345b9bda387708b470d0c555cb57
